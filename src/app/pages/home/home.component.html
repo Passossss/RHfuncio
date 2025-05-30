@@ -20,10 +20,12 @@
   <tbody *ngFor="let funcionario of funcionarios">
     <tr>
       <td>
-        <div *ngIf="funcionario.ativo == true">
+        <div *ngIf="funcionario.ativo == true; else inativo">
         <img src="assets/images/ativo.png" alt="" style="height: 20px; width: 20px;">
       </div>
+      <ng-template #inativo>
         <img src="assets/images/inativo.png" alt="" style="height: 20px; width: 20px;">
+      </ng-template>
       </td>
       <td>{{funcionario.nome}}</td>
       <td>{{funcionario.sobrenome}}

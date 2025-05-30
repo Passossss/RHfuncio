@@ -15,14 +15,19 @@ funcionarioGeral: Funcionario[] = [];
     
   }
   ngOnInit(): void {
-      this.funcionarioService.GetFuncionarios().subscribe(data =>
-      {
+      this.funcionarioService.GetFuncionarios().subscribe((data) => {
         const dados = data.dados;
+
         dados.map((item) => {
+          console.log(item)
           item.dataDeCriacao = new Date(item.dataDeCriacao!).toLocaleDateString("pt-BR")
           item.dataDeAlteracao = new Date(item.dataDeAlteracao!).toLocaleDateString("pt-BR")
 
-        })
+        });
+
+        this.funcionarios = data.dados;
+        this.funcionarioGeral = data.dados;
+
       }
       )  
 
