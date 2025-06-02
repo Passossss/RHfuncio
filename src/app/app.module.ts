@@ -5,17 +5,21 @@ import {HttpClientModule} from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CadastroComponent } from './pages/cadastro/cadastro.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FuncionarioFormComponent } from './componentes/funcionario-form/funcionario-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    CadastroComponent
+    CadastroComponent,
+    FuncionarioFormComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
