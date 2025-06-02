@@ -29,4 +29,15 @@ funcionarioGeral: Funcionario[] = [];
       }
       )  
     }
+
+  search(event: Event){
+   
+    const target = event.target as HTMLInputElement;
+    const value = target.value.toLowerCase();
+
+    this.funcionarios = this.funcionarioGeral.filter(funcionario => {
+      return funcionario.nome.toLowerCase().includes(value);
+
+    }) 
+  }
 }
